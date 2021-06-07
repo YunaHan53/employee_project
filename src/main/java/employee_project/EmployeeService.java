@@ -3,9 +3,9 @@ package employee_project;
 public interface EmployeeService {
 
 	// Declaration
-	void displayAllEmployees();
-    void calculateYearlySalary(int calcSalary);
-    void findByEmployeeNo(int findEmpNo);
-    void updateEmployee(String updateEmp);
-    void deleteEmployee();
+	public void displayAllEmployees();
+    public double calculateYearlySalary(Employee e1);
+    public Employee findByEmployeeNo(int empNo);
+    public void updateEmployee();
+    public void deleteEmployee();
 }

@@ -1,6 +1,6 @@
 package employee_project;
 
-public class Employee extends Address{
+public class Employee {
 
 	// Declaring employee variables
 	private int empNo;
@@ -9,19 +9,20 @@ public class Employee extends Address{
 	private Address address;
 	
 	// Custom constructor
-	public Employee(int empNo, String empName, double salary, Address address) {
-		super(address.getCity(), address.getState());
+	public Employee(int empNo, String empName, double salary, String city, String state) {
+		super();
 		this.empNo = empNo;
 		this.empName = empName;
 		this.salary = salary;
-		this.address = address;
+		Address.city = city;
+		Address.state = state;
 	}
 
-	
-	
+
+
 	@Override
 	public String toString() {
-		return "Employee ID: " + empNo + "Name: " + empName + "\n";
+		return "Employee ID: " + empNo + " Name: " + empName + "\n";
 	}
 
 	// Getter/Setter for Employee ID
@@ -32,6 +33,7 @@ public class Employee extends Address{
 		this.empNo = empNo;
 	}
 	
+	
 	// Getter/Setter for Employee Name
 	public String getEmpName() {
 		return empName;
@@ -40,19 +42,20 @@ public class Employee extends Address{
 		this.empName = empName;
 	}
 	
+	
 	// Getter/Setter for Employee Salary
 	public double getEmpSalary() {
-		return(double) salary;
+		return salary;
 	}
 
-	// Getter/Setter for Employee Address
 	
+	// Getter/Setter for Employee Address	
 	public Address getAddress() {
 		return address;
 	}
 	public void setAddress(String city, String state) {
-		this.address.city = city;
-		this.address.state = state;
+		Address.city = city;
+		Address.state = state;
 	}
 	
 }
