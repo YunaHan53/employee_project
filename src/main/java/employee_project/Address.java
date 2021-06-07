@@ -2,13 +2,13 @@ package employee_project;
 
 public class Address {
 
-	private String city;
-	private String state;
+	protected static String city;
+	protected static String state;
 	
 	public Address(String city, String state) {
 		super();
-		this.city = city;
-		this.state = state;
+		Address.city = city;
+		Address.state = state;
 	}
 	
 	
@@ -18,16 +18,16 @@ public class Address {
 	}
 
 	public String getCity() {
-		return city;
+		return Address.city;
 	}
 	public void setCity(String city) {
-		this.city = city;
+		Address.city = city;
 	}
 	public String getState() {
 		return state;
 	}
 	public void setState(String state) {
-		this.state = state;
+		Address.state = state;
 	}
 
 }
