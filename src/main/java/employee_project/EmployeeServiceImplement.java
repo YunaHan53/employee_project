@@ -1,69 +1,29 @@
 package employee_project;
 
-import java.util.*;
 import java.util.ArrayList;
 import java.util.logging.Logger;
-import java.util.logging.Level;
 
 public class EmployeeServiceImplement implements EmployeeService {
 
 	private static final Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());
 	
-	static ArrayList<Employee> empList =  new ArrayList<Employee>();
-
-	
-	public static void main(String[] args) {
-				
-		empList.add(new Employee(1, "Annie", 40000, "Boston", "MA" ));
-		empList.add(new Employee(2, "Craig", 70000, "Boston", "MA"));
-		empList.add(new Employee(3, "Mike", 75000, "Boston", "MA"));
-		empList.add(new Employee(4, "Jose", 70000, "Boston", "MA"));
-		empList.add(new Employee(5, "Eric", 90000, "Boston", "MA"));
-		empList.add(new Employee(6, "Choi", 100000, "Boston", "MA"));
-		empList.add(new Employee(7, "Crystal", 50000, "Boston", "MA"));
-		empList.add(new Employee(8, "Hyeri", 45000, "Boston", "MA"));
-		empList.add(new Employee(9, "Minsu", 85000, "Boston", "MA"));
-		empList.add(new Employee(10, "Jason", 50000, "Boston", "MA"));
-
-		System.out.println(empList);
-
+	static ArrayList<Employee> empList =  new ArrayList<Employee>() {
+	{
+		add(new Employee(1, "Annie", 40000, new Address("Boston", "MA")));
+		add(new Employee(2, "Craig", 70000, new Address("Lexington", "KY")));
+		add(new Employee(3, "Mike", 75000, new Address("New Brunswick", "NJ")));
+		add(new Employee(4, "Jose", 70000, new Address("Miami", "FL")));
+		add(new Employee(5, "Eric", 90000, new Address("Mexico City", "NA")));
+		add(new Employee(6, "Choi", 100000, new Address("Seoul", "NA")));
+		add(new Employee(7, "Crystal", 50000, new Address("Miami", "FL")));
+		add(new Employee(8, "Hyeri", 45000, new Address("Busan", "NA")));
+		add(new Employee(9, "Ingyu", 85000, new Address("Anyang", "NA")));
+		add(new Employee(10, "Jason", 50000, new Address("New York", "NY")));
 	}
+};
+
 	
 	// implementation
-	public void displayAllEmployee() {
-		
-		for(int i = 0; i >= empList.size(); i++) {
-		    System.out.println(empList.get(i));
-		}
-
-	}
-	public void calculateYearlySalary(int empId) {
-
-//		double calcSalary = e1.getEmpSalary()*12;
-//		double Yearly = -1;
-//		for(int i = 0; i >= empList.size(); i++) {
-//			if(emp.getEmpNo() == empId) {
-//				Yearly = calculateYearlySalary() * 40 * 52;
-//			}
-//		}
-//		return calcSalary;
-	}
-	
-	public Employee findByEmployeeNo(int findEmpNo) {
-		return null;
-		
-//		for(int i = 0; i < empList.size(); i++) {
-//			findEmpNo = empList.get(i).getEmpNo();
-//		}
-//		return ;
-	}
-	
-	public void updateEmployee(String updateEmp) {
-
-	}
-	public void deleteEmployee() {
-
-	}
 
 	public static Logger getLogger() {
 		return LOGGER;
@@ -71,23 +31,31 @@ public class EmployeeServiceImplement implements EmployeeService {
 
 	public void displayAllEmployees() {
 		// TODO Auto-generated method stub
-		
+		for(int i = 0; i >= empList.size(); i++) {
+		    System.out.println(empList.get(i));
+		}
 	}
-
+	
 	public double calculateYearlySalary(Employee e1) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	public Employee findByEmployeeNo1(int empNo) {
-		// TODO Auto-generated method stub
+		double calcSalary = e1.getEmpSalary() * 40 * 52;
+		return calcSalary;
+	}
+	
+	public Employee findByEmployeeNo(int empNo) {
 		return null;
+//		ArrayList<Employee> = (ArrayList<Employee>)empList.
+//		stream().filter(w ->w.getEmployeeNo() == empNo).collect(Collectors.toList());
+	}
+	
+	public void updateEmployee(Employee e1) {
+
 	}
 
-	public void updateEmployee() {
+	public void deleteEmployee() {
 		// TODO Auto-generated method stub
-		
 	}
+
 
 
 }

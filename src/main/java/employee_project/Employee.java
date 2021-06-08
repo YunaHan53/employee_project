@@ -9,21 +9,14 @@ public class Employee {
 	private Address address;
 	
 	// Custom constructor
-	public Employee(int empNo, String empName, double salary, String city, String state) {
+	public Employee(int empNo, String empName, double salary, Address address) {
 		super();
 		this.empNo = empNo;
 		this.empName = empName;
 		this.salary = salary;
-		Address.city = city;
-		Address.state = state;
+		this.address = address;
 	}
 
-
-
-	@Override
-	public String toString() {
-		return "Employee ID: " + empNo + " Name: " + empName + "\n";
-	}
 
 	// Getter/Setter for Employee ID
 	public int getEmpNo() {
@@ -47,15 +40,21 @@ public class Employee {
 	public double getEmpSalary() {
 		return salary;
 	}
-
+	public void setEmpSalary(double salary) {
+		this.salary = salary;
+	}
 	
 	// Getter/Setter for Employee Address	
 	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(String city, String state) {
-		Address.city = city;
-		Address.state = state;
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee ID: " + empNo + " Name: " + empName + "\n";
 	}
 	
 }

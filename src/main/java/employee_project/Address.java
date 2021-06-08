@@ -2,32 +2,31 @@ package employee_project;
 
 public class Address {
 
-	protected static String city;
-	protected static String state;
+	protected String city;
+	protected String state;
 	
 	public Address(String city, String state) {
 		super();
-		Address.city = city;
-		Address.state = state;
+		this.city = city;
+		this.state = state;
 	}
 	
-	
-	@Override
-	public String toString() {
-		return "Address: " + city + ", " + state;
-	}
-
+	// Getters/Setters
 	public String getCity() {
-		return Address.city;
+		return city;
 	}
 	public void setCity(String city) {
-		Address.city = city;
+		this.city = city;
 	}
 	public String getState() {
 		return state;
 	}
 	public void setState(String state) {
-		Address.state = state;
+		this.state = state;
 	}
 
+	@Override
+	public String toString() {
+		return "Address: " + city + ", " + state;
+	}
 }
