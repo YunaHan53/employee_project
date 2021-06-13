@@ -34,6 +34,8 @@ public class EmployeeServiceImplement implements EmployeeService {
 		for(int i = 0; i >= empList.size(); i++) {
 		    System.out.println(empList.get(i));
 		}
+		
+		System.out.println(empList);
 	}
 	
 	public double calculateYearlySalary(Employee e1) {
