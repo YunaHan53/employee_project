@@ -2,6 +2,7 @@ package employee_project;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class EmployeeServiceImplement implements EmployeeService {
 
@@ -44,10 +45,12 @@ public class EmployeeServiceImplement implements EmployeeService {
 		return calcSalary;
 	}
 	
-	public Employee findByEmployeeNo(int empNo) {
-		return null;
-//		ArrayList<Employee> = (ArrayList<Employee>)empList.
-//		stream().filter(w ->w.getEmployeeNo() == empNo).collect(Collectors.toList());
+	public int findByEmployeeNo(int empNo) {
+		
+		empList.stream()
+		.filter(e -> e.getEmpNo() == empNo).collect(Collectors.toList());
+		
+		return empNo;
 	}
 	
 	public void updateEmployee(Employee e1) {
@@ -57,7 +60,6 @@ public class EmployeeServiceImplement implements EmployeeService {
 	public void deleteEmployee() {
 		// TODO Auto-generated method stub
 	}
-
 
 
 }

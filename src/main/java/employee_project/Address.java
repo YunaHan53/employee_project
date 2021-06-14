@@ -7,8 +7,8 @@ public class Address {
 	
 	public Address(String city, String state) {
 		super();
-		this.city = city;
-		this.state = state;
+		city = city;
+		state = state;
 	}
 	
 	// Getters/Setters

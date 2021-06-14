@@ -38,9 +38,9 @@ public class UseEmployee {
 				System.out.println("Find inputed employee ID:");
 				int empId = input.nextInt();
 	
-				Employee empIdNum = runner.findByEmployeeNo(empId);
+				int empIdNum = runner.findByEmployeeNo(empId);
 			
-				System.out.println(runner.findByEmployeeNo(empId) + " " + runner.findByEmployeeNo(empId).getAddress());			
+				System.out.println("Employee with ID " + empIdNum + " is " + Employee.getEmpName() + ".");
 				break;
 				
 			case(3):

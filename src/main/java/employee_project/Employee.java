@@ -4,15 +4,15 @@ public class Employee {
 
 	// Declaring employee variables
 	private int empNo;
-	private String empName;
+	private static String empName;
 	private double salary;
-	private Address address;
+	private static Address address;
 	
 	// Custom constructor
 	public Employee(int empNo, String empName, double salary, Address address) {
 		super();
 		this.empNo = empNo;
-		this.empName = empName;
+		Employee.empName = empName;
 		this.salary = salary;
 		this.address = address;
 	}
@@ -28,11 +28,11 @@ public class Employee {
 	
 	
 	// Getter/Setter for Employee Name
-	public String getEmpName() {
+	public static String getEmpName() {
 		return empName;
 	}
 	public void setEmpName(String empName) {
-		this.empName = empName;
+		Employee.empName = empName;
 	}
 	
 	
@@ -45,7 +45,7 @@ public class Employee {
 	}
 	
 	// Getter/Setter for Employee Address	
-	public Address getAddress() {
+	public static Address getAddress() {
 		return address;
 	}
 	public void setAddress(Address address) {
