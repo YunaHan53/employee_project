@@ -2,8 +2,8 @@ package employee_project;
 
 public class Address {
 
-	protected String city;
-	protected String state;
+	protected static String city;
+	protected static String state;
 	
 	public Address(String city, String state) {
 		super();
@@ -25,7 +25,6 @@ public class Address {
 		this.state = state;
 	}
 
-	@Override
 	public String toString() {
 		return "Address: " + city + ", " + state;
 	}
