@@ -31,7 +31,7 @@ public class EmployeeServiceImplement implements EmployeeService {
 	}
 
 	public void displayAllEmployees() {
-		// TODO Auto-generated method stub
+
 		for(int i = 0; i >= empList.size(); i++) {
 		    System.out.println(empList.get(i));
 		}
@@ -41,8 +41,8 @@ public class EmployeeServiceImplement implements EmployeeService {
 	
 	public double calculateYearlySalary(Employee e1) {
 
-		double calcSalary = e1.getEmpSalary() * 40 * 52;
-		return calcSalary;
+		double annualSalary = e1.getEmpSalary() * 40 * 52;
+		return annualSalary;
 	}
 	
 	public int findByEmployeeNo(int empNo) {
@@ -57,9 +57,10 @@ public class EmployeeServiceImplement implements EmployeeService {
 
 	}
 
-	public void deleteEmployee() {
-		// TODO Auto-generated method stub
+	public void deleteEmployee(Employee e1) {
+		empList.remove(e1);
 	}
+
 
 
 }
