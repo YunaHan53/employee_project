@@ -10,7 +10,7 @@ public class Employee {
 	
 	// Custom constructor
 	public Employee(int empNo, String empName, double salary, Address address) {
-		super();
+		// TODO Auto-generated constructor stub
 		this.empNo = empNo;
 		this.empName = empName;
 		this.salary = salary;
@@ -20,6 +20,7 @@ public class Employee {
 
 	public Employee() {
 		// TODO Auto-generated constructor stub
+		super();
 	}
 
 
@@ -61,7 +62,9 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee ID: " + empNo + ", Name: " + empName + ", Annual Salary:" + salary + ", Address: " + address + "\n";
+		return "Employee ID: " + empNo + ", Name: " + empName + 
+				", Annual Salary:" + salary + 
+				", Address: " + address + "\n";
 	}
 	
 }

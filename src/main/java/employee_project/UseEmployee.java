@@ -6,20 +6,21 @@ import java.util.logging.Level;
 
 
 public class UseEmployee {
+	
 	private static final Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());
 	
 	public static Scanner input = new Scanner(System.in);
 
 	// Main
 	public static void main(String[] args) {
-	
+		// Create new instances
+		EmployeeServiceImplement runner = new EmployeeServiceImplement();
+		Employee e1 = new Employee();
+
 		int inputNum = 0;
 		boolean exit = true;
 		
-		// Create new instance of Employee Service object
-		EmployeeServiceImplement runner = new EmployeeServiceImplement();
-		// Create new instance of Employee
-		Employee e1 = new Employee();
+
 		// Print EIS Introduction
 		System.out.println("/*** Welcome to the Employee Information System ***/ \n");
 
