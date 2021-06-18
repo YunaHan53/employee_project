@@ -52,9 +52,10 @@ public class EmployeeServiceImplement implements EmployeeService {
 		return annualSalary;
 	}
 	
-	public void updateEmployee(Employee e1) {
-
-	}
+//	public void updateEmployee(Employee e1) {
+//
+//		
+//	}
 
 	// Delete an employee
 	public void deleteEmployee(Employee e1) {

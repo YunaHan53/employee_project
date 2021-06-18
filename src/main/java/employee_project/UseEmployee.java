@@ -45,7 +45,7 @@ public class UseEmployee {
 			
 			// Find employee by ID
 			case(2):
-				System.out.println("Please enter employee ID to get their info:");
+				System.out.println("Please enter employee ID to get their info:\n");
 				int empId = input.nextInt();
 	
 				e1 = runner.findByEmployeeNo(empId);
@@ -56,24 +56,24 @@ public class UseEmployee {
 			
 			// Display salary of one employee by ID
 			case(3):
-				System.out.println("Enter the employee ID to get their name and salary:");
+				System.out.println("Enter the employee ID to get their name and salary:\n");
 				empId = input.nextInt();
 
 				e1 = runner.findByEmployeeNo(empId);
 				
-				System.out.println("Employee with ID #" + e1.getEmpNo() + " is " + e1.getEmpName() + " with an annual salary of " + e1.getEmpSalary() );
+				System.out.println("Employee with ID #" + empId + " is " + e1.getEmpName() + " with a monthly salary of $" + e1.getEmpSalary() + ".\n" );
 				break;
 
 			// Delete an employee
 			case(4):
-				System.out.println("Enter the employee ID that you want to delete:");
+				System.out.println("Enter the employee ID that you want to delete:\n");
 				empId = input.nextInt();
 				
 				e1 = runner.findByEmployeeNo(empId);
 				
-				runner.deleteEmployee(EmployeeServiceImplement.empList.get(empId ));
+				runner.deleteEmployee(EmployeeServiceImplement.empList.get(empId));
 				
-				LOGGER.log(Level.WARNING, "Employee deleted.");
+				LOGGER.log(Level.WARNING, "Employee deleted.\n");
 				break;
 			
 			// Exit
