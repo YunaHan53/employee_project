@@ -29,7 +29,7 @@ public class UseEmployee {
 			System.out.println("/*** Employee Menu, please input a number to select ***/ \n"
 					+ "1. Display all employees\n"
 					+ "2. Find employee by employee ID\n"
-					+ "3. Display an employee's yearly salary\n"
+					+ "3. Display an employee's monthly salary\n"
 					+ "4. Delete an employee\n"
 					+ "5. Quit");
 			
@@ -71,7 +71,7 @@ public class UseEmployee {
 				
 				e1 = runner.findByEmployeeNo(empId);
 				
-				runner.deleteEmployee(EmployeeServiceImplement.empList.get(empId));
+				runner.deleteEmployee(e1);
 				
 				LOGGER.log(Level.WARNING, "Employee deleted.\n");
 				break;
