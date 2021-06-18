@@ -18,6 +18,11 @@ public class Employee {
 	}
 
 
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	// Getter/Setter for Employee ID
 	public int getEmpNo() {
 		return empNo;
@@ -53,9 +58,10 @@ public class Employee {
 		this.address = address;
 	}
 	
+	
 	@Override
 	public String toString() {
-		return "Employee ID: " + empNo + " Name: " + empName + "Annual Salary:" + salary + "Address:" + address + "\n";
+		return "Employee ID: " + empNo + ", Name: " + empName + ", Annual Salary:" + salary + ", Address: " + address + "\n";
 	}
 	
 }

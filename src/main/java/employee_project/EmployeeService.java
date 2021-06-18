@@ -7,5 +7,5 @@ public interface EmployeeService {
     public double calculateYearlySalary(Employee e1);
     public int findByEmployeeNo(int empNo);
     public void updateEmployee(Employee e1);
-    public void deleteEmployee();
+    public void deleteEmployee(Employee e1);
 }

@@ -1,12 +1,9 @@
 package employee_project;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class EmployeeServiceImplement implements EmployeeService {
-
-	private static final Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());
 	
 	static ArrayList<Employee> empList =  new ArrayList<Employee>() {
 	{
@@ -24,12 +21,9 @@ public class EmployeeServiceImplement implements EmployeeService {
 };
 
 	
-	// implementation
+	// IMPLEMENTATION //
 
-	public static Logger getLogger() {
-		return LOGGER;
-	}
-
+	// Display all employees
 	public void displayAllEmployees() {
 
 		for(int i = 0; i >= empList.size(); i++) {
@@ -38,13 +32,9 @@ public class EmployeeServiceImplement implements EmployeeService {
 		
 		System.out.println(empList);
 	}
-	
-	public double calculateYearlySalary(Employee e1) {
 
-		double annualSalary = e1.getEmpSalary() * 40 * 52;
-		return annualSalary;
-	}
 	
+	// Find employee by ID
 	public int findByEmployeeNo(int empNo) {
 		
 		empList.stream()
@@ -53,10 +43,19 @@ public class EmployeeServiceImplement implements EmployeeService {
 		return empNo;
 	}
 	
+	// Display salary of one employee by ID
+	public double calculateYearlySalary(Employee e1) {
+		Employee es = new Employee();
+		
+		double annualSalary = es.getEmpSalary() * 12;
+		return annualSalary;
+	}
+	
 	public void updateEmployee(Employee e1) {
 
 	}
 
+	// Delete an employee
 	public void deleteEmployee(Employee e1) {
 		empList.remove(e1);
 	}
