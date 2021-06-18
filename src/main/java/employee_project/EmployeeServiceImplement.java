@@ -1,7 +1,7 @@
 package employee_project;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
+
 
 public class EmployeeServiceImplement implements EmployeeService {
 	
@@ -38,12 +38,11 @@ public class EmployeeServiceImplement implements EmployeeService {
 
 	
 	// Find employee by ID
-	public int findByEmployeeNo(int empNo) {
+	public Employee findByEmployeeNo(int empNo) {
 		
-		empList.stream()
-		.filter(e -> e.getEmpNo() == empNo).collect(Collectors.toList());
-		
-		return empNo;
+		Employee e1 = empList.stream().filter(e -> e.getEmpNo() == empNo).findFirst().orElse(null);
+	
+		return e1;
 	}
 	
 	// Display salary of one employee by ID

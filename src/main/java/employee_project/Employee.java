@@ -17,10 +17,8 @@ public class Employee {
 		this.address = address;
 	}
 
-
 	public Employee() {
-		// TODO Auto-generated constructor stub
-		super();
+		
 	}
 
 

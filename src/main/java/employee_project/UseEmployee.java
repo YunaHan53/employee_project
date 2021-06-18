@@ -48,7 +48,7 @@ public class UseEmployee {
 				System.out.println("Please enter employee ID to get their info:");
 				int empId = input.nextInt();
 	
-				int empIdNum = runner.findByEmployeeNo(empId);
+				e1 = runner.findByEmployeeNo(empId);
 				
 			
 				System.out.println("This employee's name is " + e1.getEmpName() + " located in " + e1.getAddress() + ".\n");
@@ -59,9 +59,9 @@ public class UseEmployee {
 				System.out.println("Enter the employee ID to get their name and salary:");
 				empId = input.nextInt();
 
-				empIdNum = runner.findByEmployeeNo(empId);
+				e1 = runner.findByEmployeeNo(empId);
 				
-				System.out.println("Employee with ID #" + empIdNum + " is " + e1.getEmpName() + " with an annual salary of " + e1.getEmpSalary() );
+				System.out.println("Employee with ID #" + e1.getEmpNo() + " is " + e1.getEmpName() + " with an annual salary of " + e1.getEmpSalary() );
 				break;
 
 			// Delete an employee
@@ -69,9 +69,9 @@ public class UseEmployee {
 				System.out.println("Enter the employee ID that you want to delete:");
 				empId = input.nextInt();
 				
-				empIdNum = runner.findByEmployeeNo(empId);
+				e1 = runner.findByEmployeeNo(empId);
 				
-				runner.deleteEmployee(EmployeeServiceImplement.empList.get(empIdNum));
+				runner.deleteEmployee(EmployeeServiceImplement.empList.get(empId ));
 				
 				LOGGER.log(Level.WARNING, "Employee deleted.");
 				break;
