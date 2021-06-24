@@ -36,6 +36,10 @@ public class EmployeeServiceImplement implements EmployeeService {
 		System.out.println(empList.toString());
 	}
 
+	// Add an employee
+	public void addEmployee() {
+		
+	}
 	
 	// Find employee by ID
 	public Employee findByEmployeeNo(int empNo) {
@@ -52,8 +56,44 @@ public class EmployeeServiceImplement implements EmployeeService {
 		return annualSalary;
 	}
 	
+	// Update an Employee
 	public void updateEmployee(Employee e1) {
-
+		
+		System.out.println("Please enter what you would like to change");
+		System.out.println("1. Employee Name");
+		System.out.println("2. Employee Salary");
+		System.out.println("3. Employee Address");
+		int cha=scan.nextInt();
+		
+		switch(cha) {
+		case 1:
+			
+			System.out.println("Enter your name change");
+			String name = scan.next();
+			findByEmployeeNo(empNo).setEmpName(name);
+			System.out.println("New Employee Name " + findByEmployeeNo(empNo).getEmpName());
+			System.out.println(empList);
+			break;
+		case 2:
+			double salary=scan.nextDouble();
+			findByEmployeeNo(empNo).setSalary(salary);
+			System.out.println("New Employee Salary " + findByEmployeeNo(empNo).getSalary());
+			System.out.println(empList);
+			break;
+		case 3:
+			System.out.println("Enter a City for new address");
+			String city= scan.next();
+			System.out.println("Enter a State for new address");
+			String state= scan.next();
+			
+			findByEmployeeNo(empNo).setAddress(new Address(city,state));
+			System.out.println("The employee's Address is now set to: " + findByEmployeeNo(empNo).getAddress().getCity() + ", " + findByEmployeeNo(empNo).getAddress().getState());
+			
+			System.out.println(empList);
+			break;
+			default:
+				System.out.println("Command not recognized");
+		}
 		
 	}
 
