@@ -1,9 +1,12 @@
 package employee_project;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class EmployeeServiceImplement implements EmployeeService {
+	
+	public static Scanner input = new Scanner(System.in);
 	
 	public static ArrayList<Employee> empList =  new ArrayList<Employee>() {
 
@@ -38,6 +41,24 @@ public class EmployeeServiceImplement implements EmployeeService {
 
 	// Add an employee
 	public void addEmployee() {
+		System.out.println("Employee ID");
+		int newID= input.nextInt();
+		
+		System.out.println("Employee Name: ");
+		String name = input.next();
+		
+		System.out.println("Employee Monthly Earnings: ");
+		double salary = input.nextDouble();
+		
+		System.out.println("Employee City ");
+		String city = input.next();
+		
+		System.out.println("Employee State ");
+		String state = input.next();
+		
+		empList.add(new Employee(newID, name, salary, new Address(city,state)));
+		System.out.println("Employee created");
+		System.out.println(empList);
 		
 	}
 	
@@ -59,32 +80,46 @@ public class EmployeeServiceImplement implements EmployeeService {
 	// Update an Employee
 	public void updateEmployee(Employee e1) {
 		
+		int choice = input.nextInt();
+		update(choice);
+		
+	}
+
+	// Delete an employee
+	public void deleteEmployee(Employee e1) {
+		empList.remove(e1);
+	}
+
+
+	// Update Employee Choices
+	public void update(int empNo) {
+		
 		System.out.println("Please enter what you would like to change");
 		System.out.println("1. Employee Name");
 		System.out.println("2. Employee Salary");
 		System.out.println("3. Employee Address");
-		int cha=scan.nextInt();
+		int cha=input.nextInt();
 		
 		switch(cha) {
 		case 1:
 			
 			System.out.println("Enter your name change");
-			String name = scan.next();
+			String name = input.next();
 			findByEmployeeNo(empNo).setEmpName(name);
 			System.out.println("New Employee Name " + findByEmployeeNo(empNo).getEmpName());
 			System.out.println(empList);
 			break;
 		case 2:
-			double salary=scan.nextDouble();
-			findByEmployeeNo(empNo).setSalary(salary);
-			System.out.println("New Employee Salary " + findByEmployeeNo(empNo).getSalary());
+			double salary=input.nextDouble();
+			findByEmployeeNo(empNo).setEmpSalary(salary);
+			System.out.println("New Employee Salary " + findByEmployeeNo(empNo).getEmpSalary());
 			System.out.println(empList);
 			break;
 		case 3:
 			System.out.println("Enter a City for new address");
-			String city= scan.next();
+			String city= input.next();
 			System.out.println("Enter a State for new address");
-			String state= scan.next();
+			String state= input.next();
 			
 			findByEmployeeNo(empNo).setAddress(new Address(city,state));
 			System.out.println("The employee's Address is now set to: " + findByEmployeeNo(empNo).getAddress().getCity() + ", " + findByEmployeeNo(empNo).getAddress().getState());
@@ -94,14 +129,7 @@ public class EmployeeServiceImplement implements EmployeeService {
 			default:
 				System.out.println("Command not recognized");
 		}
-		
 	}
-
-	// Delete an employee
-	public void deleteEmployee(Employee e1) {
-		empList.remove(e1);
-	}
-
 
 
 }
